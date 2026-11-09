@@ -1,0 +1,10 @@
+{
+  "name": "瑶叶 YAOYE",
+  "short_name": "YAOYE",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#05071e",
+  "theme_color": "#05071E",
+  "icons": [{ "src": "/brand/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
