@@ -7,15 +7,36 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>瑶叶 YAOYE · 一叶知AI</title>
+    <meta name="apple-mobile-web-app-title" content="瑶叶YAOYE" />
+    <!-- Feishu / Lark webview: hide the top and bottom bars for a full-screen game -->
+    <meta name="showNavBar" content="false" lk-config />
+    <meta name="showBottomNavBar" content="false" lk-config />
+    <script>
+      (function () {
+        if (!/Lark|Feishu/i.test(navigator.userAgent)) return;
+        try {
+          var u = new URL(location.href);
+          if (!u.searchParams.has("lk_meta")) {
+            u.searchParams.set("lk_meta", JSON.stringify({ "page-meta": { showNavBar: "false", showBottomNavBar: "false" } }));
+            location.replace(u.toString());
+            return;
+          }
+        } catch (e) {}
+        var s = document.createElement("script");
+        s.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/lark/op/h5-js-sdk-1.5.23.js";
+        s.async = true;
+        document.head.appendChild(s);
+      })();
+    </script>
+    <title>瑶叶YAOYE</title>
     <meta name="description" content="瑶叶的像素旅行个人网站：9年大厂营销运营操盘手 × AI探索者。跟着小瑶叶走过南国灯城、熊猫慢游、烟雨江南、故宫初雪，解锁作品与联系方式。" />
     <meta name="theme-color" content="#05071E" />
-    <meta property="og:title" content="瑶叶 YAOYE · 一叶知AI" />
+    <meta property="og:title" content="瑶叶YAOYE" />
     <meta property="og:description" content="给你的脑洞，招一群 AI 员工。一个可以玩的像素个人网站。" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/brand/app-icon.svg" type="image/svg+xml" />
-    <script type="module" crossorigin src="/assets/index-Be6YajVM.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BztOireH.css">
+    <script type="module" crossorigin src="/assets/index-DVgLF-ac.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CTzjebMm.css">
   </head>
   <body>
     <div id="app">
@@ -30,7 +51,7 @@
     </div>
     <noscript>
       <div class="noscript">
-        <h1>瑶叶 YAOYE · 一叶知AI</h1>
+        <h1>瑶叶YAOYE</h1>
         <p>9年大厂营销运营操盘手 × AI探索者。这个网站是一个像素小游戏，需要开启 JavaScript 才能游玩。</p>
       </div>
     </noscript>
