@@ -11,13 +11,16 @@
     <!-- Feishu / Lark webview: hide the top and bottom bars for a full-screen game -->
     <meta name="showNavBar" content="false" lk-config />
     <meta name="showBottomNavBar" content="false" lk-config />
+    <meta name="orientation" content="landscape" lk-config />
     <script>
       (function () {
         if (!/Lark|Feishu/i.test(navigator.userAgent)) return;
         try {
           var u = new URL(location.href);
-          if (!u.searchParams.has("lk_meta")) {
-            u.searchParams.set("lk_meta", JSON.stringify({ "page-meta": { showNavBar: "false", showBottomNavBar: "false" } }));
+          var m = u.searchParams.get("lk_meta") || "";
+          if (m.indexOf("orientation") < 0 && !sessionStorage.getItem("lkr")) {
+            sessionStorage.setItem("lkr", "1");
+            u.searchParams.set("lk_meta", JSON.stringify({ "page-meta": { showNavBar: "false", showBottomNavBar: "false", orientation: "landscape" } }));
             location.replace(u.toString());
             return;
           }
@@ -35,8 +38,8 @@
     <meta property="og:description" content="给你的脑洞，招一群 AI 员工。一个可以玩的像素个人网站。" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/brand/app-icon.svg" type="image/svg+xml" />
-    <script type="module" crossorigin src="/assets/index-DVgLF-ac.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CTzjebMm.css">
+    <script type="module" crossorigin src="/assets/index-0KIdvxgn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DskZSsO1.css">
   </head>
   <body>
     <div id="app">
